@@ -68,10 +68,12 @@ while True:
         print('You have made an error. The application will be closed.')
 # Counting number of words:
 print(separate)
-word_list = (TEXTS[text_selection]).split()
-print('There are', len(word_list), 'words in the selected text.')
 
+only_words = TEXTS[text_selection].replace(".", "").replace(",", "").replace(";", "")
+word_list = only_words.split()
+print('There are', len(word_list), 'words in the selected text.')
 text_split_words = (TEXTS[text_selection]).split()
+
 titlecase_words = 0
 for i in text_split_words:
     if i[0].isupper():
@@ -140,10 +142,5 @@ for key in sorted_keys:
 
     print(f"{str_key} | {stars}{star_fill} | {count}")
 
-def soucet(a, b):
-    c = a + b
-    return c
 
-def cislo_na_text(cislo):
-    return str(cislo)
 
